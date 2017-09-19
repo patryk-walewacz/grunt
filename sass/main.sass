@@ -1,0 +1,554 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,200i,300,400,400i,500,800,900&amp;subset=latin-ext)
+
+/* GRID STYLES */
+.row:before,
+.row:after 
+	content: ""
+	display: table
+	clear: both
+
+[class*="col-"] 
+	float: left
+	min-height: 1px
+
+.col-1 
+	width: 8.33%
+.col-2 
+	width: 16.66%
+.col-3 
+	width: 25%
+.col-4 
+	width: 33.33%
+.col-5 
+	width: 41.66%
+.col-6 
+	width: 50%
+.col-7 
+	width: 58.33%
+.col-8 
+	width: 66.66%
+.col-9 
+	width: 75%
+.col-10 
+	width: 83.33%
+.col-11 
+	width: 91.66%
+.col-12 
+	width: 100%
+
+.col-offset-1 
+	margin-left: 8.33%
+.col-offset-2 
+	margin-left: 16.66%
+.col-offset-3 
+	margin-left: 25%
+.col-offset-4 
+	margin-left: 33.33%
+.col-offset-5 
+	margin-left: 41.66%
+.col-offset-6 
+	margin-left: 50%
+.col-offset-7 
+	margin-left: 58.33%
+.col-offset-8 
+	margin-left: 66.66%
+.col-offset-9 
+	margin-left: 75%
+.col-offset-10 
+	margin-left: 83.33%
+.col-offset-11 
+	margin-left: 91.66%
+
+/* GLOBAL STYLES */
+$main: #313332
+$layer: rgba(0, 0, 0, 0.5)
+
+=border-radius($radius)
+	-webkit-border-radius: $radius
+	-moz-border-radius:    $radius
+	-ms-border-radius:     $radius
+	border-radius:         $radius
+
+*
+	box-sizing: border-box
+
+body 
+	margin: 0
+	font-family: 'Raleway', sans-serif
+
+.container 
+	max-width: 1000px
+
+.margin-0 
+	margin: 0 auto
+ 
+.margin-60 
+	margin: 60px auto
+	text-align: center
+
+/* HEADER */
+header 
+	background: $main
+	height: 60px
+	font-size: 17px
+
+	nav
+		img 
+			padding: 10px 0 10px 15px
+			float: left
+
+		ul 
+			margin: 0
+			padding: 0
+			list-style-type: none
+			float: right
+
+			li 
+				display: inline-block
+
+				a 
+					line-height: 60px
+					padding: 0 15px
+					display: inline-block
+					color: #fff
+					text-decoration: none
+					text-transform: uppercase
+					transition: 0.2s
+					&:hover
+						color: #258FDD
+
+/* HERO */
+.hero 
+	background-image: url(http://i.imgur.com/oZrXbfA.jpg?)
+	background-size: cover
+	height: 400px
+	position: relative
+
+	.slogan 
+		background: $layer
+		float: right
+		color: #fff
+		text-transform: uppercase
+		margin-top: 130px
+		font-size: 21px
+		padding: 15px 120px 15px 15px
+
+		h1 
+			margin: 0
+
+	.slogan-topline 
+		font-weight: 100
+
+	.hero-buttons 
+		position: absolute
+		bottom: 10px
+		width: 100%
+		text-align: center
+
+	.hero-btn 
+		width: 20px
+		height: 20px
+		+border-radius(50%)
+		margin: 15px
+		cursor: pointer
+		border: none
+		background: #cbcbcb
+		transition: 0.2s
+		&:hover
+			background: #fff
+			transform: scale(1.2)
+
+/* BENEFITS */
+.benefits 
+	font-size: 17px
+
+	.col-4 
+		padding: 15px
+
+	h3 
+		margin: 0
+		text-transform: uppercase
+		padding-top: 20px
+		transition: 0.1s
+
+	p 
+		padding: 10px 20px
+		margin: 0
+		line-height: 150%
+
+	.col-4
+		&:hover
+			.benefits-btn
+				background: #258FDD
+			h3
+				color: #258FDD
+
+	.benefits-btn 
+		width: 100px
+		height: 100px
+		border: none
+		+border-radius(10px)
+		background: $main
+		line-height: 100px
+		color: #fff
+		cursor: pointer
+		font-size: 60px
+		transition: 0.1s
+
+/* FEATURED */
+.featured 
+	font-size: 19px
+	text-align: center
+
+	h1 
+		text-transform: uppercase
+		margin: 0
+		font-weight: 800	
+
+	p 
+		font-style: italic
+		padding: 0 80px
+
+/* GALLERY */
+.gallery 
+
+	[class*="col-"] 
+		height: 180px
+		position: relative
+
+	img 
+		width: 100%
+		height: 180px
+		object-fit: cover
+
+	.layer 
+		height: 180px
+		width: 100%
+		background: $layer
+		padding: 72px 0
+		letter-spacing: 50px
+		text-align: center
+		position: absolute
+		top: 0
+		left: 0
+		opacity: 0
+		transition: 0.8s
+
+	.gallery-btn 
+		height: 36px
+		width: 36px
+		font-size: 23px
+		color: #000
+		background: #ffccff
+		cursor: pointer
+		+border-radius(8%)
+		border: none
+		transition: 0.2s
+		&:hover
+			transform: scale(1.1)
+
+	[class*="col-"]
+		&:hover 
+			.layer 
+				opacity: 1
+
+/* TEAM */
+.team
+		
+	.col-3 
+		font-size: 17px
+
+	.photo 
+		height: 200px
+		width: 200px
+		position: relative
+		margin: 0 auto
+
+	img 
+		+border-radius(50%)
+		height: 200px
+		width: 200px
+
+	h3 
+		font-weight: 500
+
+	p 	
+		@extend img
+		@extend .photo
+		padding: 91.5px 0
+		position: absolute
+		top: 0
+		left: 0
+		color: #fff
+		cursor: pointer
+		opacity: 0
+		transition: 0.5s
+		background: $layer
+		&:hover
+			opacity: 1
+
+/* PICTURE */
+.picture 
+	background-image: url(http://i.imgur.com/krDs6Qe.png?1)
+	padding-top: 30px
+	color: #fff
+	letter-spacing: 1px
+
+	h1 
+		margin: 0
+		padding-left: 10px
+		font-size: 35px
+		text-transform: uppercase
+
+	.big-col-8 
+		margin-top: 25px
+
+		.col-4 
+			font-style: italic
+	
+		.row 
+			[class*="col-"] 
+				padding: 10px
+				font-weight: 200
+
+/* NUMBERS */
+.numbers 
+
+	h1 
+		font-size: 55px
+		font-weight: 900
+		color: $main
+		margin: 0
+		padding-bottom: 10px
+
+	p 
+		font-size: 22px
+		font-weight: 500
+		margin: 0
+		color: #01b0dc
+		text-transform: uppercase
+
+
+/* FOOTER */
+footer
+	background: $main
+	color: #fff
+
+	h2 
+		text-transform: uppercase
+		font-weight: 800
+		letter-spacing: 1px
+		margin: 0
+		&:after
+			content: ""
+			border-top: 1.5px solid white
+			vertical-align: middle
+			width: 80px
+			margin-left: 12px
+			display: inline-block
+
+	p 
+		font-weight: 300
+
+	.big-col-4 
+		padding: 30px 20px
+
+	button 
+		width: 35px
+		height: 35px
+		margin-right: 5px
+		background: #00C7E8
+		color: #fff
+		border: none
+		transition: 0.2s
+		&:hover
+			background: #00a5c6
+			transform: scale(1.2)
+
+	.copy 
+		text-align: center
+		margin: 0
+		padding: 15px 0
+		background: #202221
+
+/* @media-queries */
+@media (max-width: 1000px) 
+	.col-md-1 
+		width: 8.33%
+	.col-md-2 
+		width: 16.66%
+	.col-md-3 
+		width: 25%
+	.col-md-4 
+		width: 33.33%
+	.col-md-5 
+		width: 41.66%
+	.col-md-6 
+		width: 50%
+	.col-md-7 
+		width: 58.33%
+	.col-md-8 
+		width: 66.66%
+	.col-md-9 
+		width: 75%
+	.col-md-10 
+		width: 83.33%
+	.col-md-11 
+		width: 91.66%
+	.col-md-12 
+		width: 100%
+
+	.container 
+		max-width: 95%
+		text-align: center
+
+	.margin-60 
+		margin: 40px auto
+	
+	header 
+		font-size: 16px
+
+		nav
+			ul
+				li
+					a
+						padding: 0 8px
+	
+	.hero 
+		background-image: url(http://i.imgur.com/caJuM79.jpg)
+	
+	.gallery 
+		[class*="col-"], img 
+			height: 230px
+	
+		.layer 
+			height: 230px
+			padding: 97px 0
+
+@media (max-width: 768px) 
+	.col-sm-1 
+		width: 8.33%
+	.col-sm-2 
+		width: 16.66%
+	.col-sm-3 
+		width: 25%
+	.col-sm-4 
+		width: 33.33%
+	.col-sm-5 
+		width: 41.66%
+	.col-sm-6 
+		width: 50%
+	.col-sm-7 
+		width: 58.33%
+	.col-sm-8 
+		width: 66.66%
+	.col-sm-9 
+		width: 75%
+	.col-sm-10 
+		width: 83.33%
+	.col-sm-11 
+		width: 91.66%
+	.col-sm-12 
+		width: 100%
+
+	.margin-60 
+		margin: 30px auto
+	
+	header 
+		height: auto
+	
+		nav
+			img
+				padding: 10px 0
+				float: none
+
+			ul
+				float: none
+
+				li
+					display: block
+
+					a
+						line-height: 35px
+
+	.hero 
+		background-image: url(http://i.imgur.com/L2BLpiJ.jpg)
+		height: 300px
+	
+		.slogan 
+			width: 90%
+			text-align: center
+			margin-top: 80px
+			font-size: 18px
+			padding: 15px
+	
+		.hero-btn 
+			width: 15px
+			height: 15px
+			margin: 10px
+	
+	.benefits 
+		.col-4 
+			padding: 15px 0
+	
+		p
+			padding: 10px 0
+	
+		.benefits-btn 
+			width: 75px
+			height: 75px
+			line-height: 75px
+			font-size: 45px
+	
+	.featured
+		font-size: 18px
+		text-align: center
+	
+		p
+			padding: 0
+	
+	.gallery 
+		[class*="col-"], img
+			height: 180px
+	
+		.layer 
+			height: 180px
+			padding: 72px 0
+			letter-spacing: 30px
+	
+	.team 
+		.col-3 
+			padding: 15px 0
+	
+		h3 
+			margin: 10px 0
+	
+	.picture 
+		padding-bottom: 30px
+	
+		p 
+			margin: 0
+	
+	.numbers 
+		h1 
+			font-size: 40px
+	
+		p 
+			font-size: 18px
+	
+	footer 
+		font-size: 15px
+	
+		h2 
+			font-weight: 700
+			&:after
+				width: 40px
+				margin-left: 10px
+	
+		big-col-4
+			padding: 25px 0
+	
+		button 
+			width: 32px
+			height: 32px
+			margin-right: 2px
